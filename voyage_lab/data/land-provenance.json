@@ -1,0 +1,9 @@
+{
+  "source": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_50m_land.geojson",
+  "version": "Natural Earth 5.1.2 / 1:50m land",
+  "license": "Public domain",
+  "terms": "https://www.naturalearthdata.com/about/terms-of-use/",
+  "source_sha256": "e874b27a51d146452be360cafb3cc50c86001074a67d534113e6534682f9826b",
+  "transform": "Clip to WGS84 [-130,30,-116,50]; union; no simplification",
+  "warning": "Coarse research mask; not a navigational chart or safety validation"
+}

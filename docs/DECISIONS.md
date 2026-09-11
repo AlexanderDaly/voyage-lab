@@ -1,0 +1,11 @@
+# Implementation decisions
+
+1. **Milestones 1–3 define v0.1.** Live/cached forecasts, graph optimization, job infrastructure, weather animation, and fleet features remain roadmap items. This resolves conflicting release boundaries in the original proposal.
+2. **A scientific Python package owns calculations.** `voyage_lab/` replaces separate top-level `core/` and `api/` folders so CLI, API, wheel packaging, and tests share one importable contract. NumPy, pyproj, and Shapely support interpolation and geometry. SciPy and xarray are deferred until a solver or gridded forecast adapter needs them.
+3. **One FastAPI process serves the built React application.** Vite provides development tooling. There is no SQLite, Redis, worker queue, Docker requirement, or cloud deployment dependency. In-memory runs and portable exports satisfy the initial workflow.
+4. **MapLibre runs entirely from local assets.** A small public-domain Natural Earth land subset supplies the map and coarse exclusion mask. There are no remote tiles, glyph services, image assets, web fonts, or weather requests at runtime.
+5. **JSON replay includes inputs, not only hashes.** Every bundle contains geometry, vessel configuration, environmental arrays, land mask, calculation settings, and results. An isolated installed wheel can recompute it.
+6. **Constrained comparison precedes optimization.** The UI highlights the lowest feasible cost among three constant-speed scenarios. It does not claim global optimality. A late scenario retains full metrics for useful comparisons.
+7. **Windows is the first verified platform.** A project virtual environment uses CPython 3.12; the unrelated MSYS Python on the host is not modified. Node 24 and pnpm 11.19.0 build the interface. Lockfiles capture Python and frontend dependencies. Ubuntu CI will supply the second platform's evidence after publication.
+8. **WRT is a documented future adapter candidate.** A bounded source/configuration assessment was sufficient for this milestone. No upstream runtime integration or reproduced example is claimed.
+9. **Public release remains a separate final action.** Prepare the local repository first, then obtain publication confirmation with owner, name, visibility, and contents, as requested in the kickoff prompt.

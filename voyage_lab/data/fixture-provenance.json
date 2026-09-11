@@ -1,0 +1,21 @@
+{
+  "generator": "voyage_lab.fixtures.make_environment",
+  "version": 1,
+  "kind": "synthetic",
+  "valid_from": "2026-09-11T00:00:00Z",
+  "valid_to": "2026-09-21T00:00:00Z",
+  "units": {
+    "wave_from_north": "unit vector (from)",
+    "wind_east_mps": "m/s (to)",
+    "current_east_mps": "m/s (to)",
+    "wave_from_east": "unit vector (from)",
+    "wave_height_m": "m",
+    "current_north_mps": "m/s (to)",
+    "wind_north_mps": "m/s (to)"
+  },
+  "license": "MIT",
+  "seed": null,
+  "issue_time": null,
+  "retrieval_time": null,
+  "note": "Original analytic fields sampled every 6 hours on a coarse grid. Not observations or forecasts."
+}
