@@ -1,6 +1,6 @@
 # Voyage Lab status
 
-Updated: 11 September 2026. Local v0.1 implementation is complete. GitHub publication awaits the user's requested final confirmation.
+Updated: 11 September 2026. v0.1 is published at [AlexanderDaly/voyage-lab](https://github.com/AlexanderDaly/voyage-lab). The initial Ubuntu CI run passed.
 
 ## Completed
 
@@ -29,13 +29,14 @@ Updated: 11 September 2026. Local v0.1 implementation is complete. GitHub public
 | Benchmark | 15 measured core runs plus convergence and tight-deadline cases; initial maximum below 0.06 s |
 | Visual review | Desktop map, scenarios, and charts inspected; mobile overflow checked at 390 px |
 | Structured browser action | Valid input updated the visible comparison; 30-kn input rejected with the baseline unchanged |
+| Ubuntu GitHub Actions | [Initial published commit passed](https://github.com/AlexanderDaly/voyage-lab/actions/runs/34649679132): scientific/API tests, lint/format, frontend build, browser tests, CLI replay, and package build |
 
 See `benchmarks/results.json` for exact measurements. Browser test traces and local exports remain ignored. `docs/workbench.png` is a screenshot of the tested default example.
 
 ## Known limitations
 
 - Synthetic physics and environment, coarse land mask, constant speeds, USD only. No forecast, calibrated accuracy, full optimizer, navigation validation, or probabilistic arrival claim.
-- Only Windows execution is verified locally. Ubuntu CI and cross-platform replay remain unverified until GitHub Actions runs.
+- Windows local execution and Ubuntu CI are verified. Replay is tested within each platform; replay of the same exported bundle across different operating systems remains unverified.
 - Two upstream test-client deprecation warnings occur with the locked FastAPI/Starlette stack; no test failures.
 - Vite reports a large bundle warning because MapLibre is included. The production JS is approximately 1.30 MB before compression / 361 KB gzip; it is served locally with no external assets.
 - The wheel contains the CLI/API and scientific fixtures. The React application is built from the repository; the wheel alone does not contain the compiled frontend.
@@ -44,10 +45,10 @@ See `benchmarks/results.json` for exact measurements. Browser test traces and lo
 
 ## Publication and next task
 
-Authenticated connected GitHub account and Git credential-manager account: `AlexanderDaly`. Preferred repository: `voyage-lab`, proposed public visibility for the portfolio. A repository metadata check returned 404; creation must recheck the name at publication time. No remote is configured and nothing has been published.
+The user approved public publication. Created [AlexanderDaly/voyage-lab](https://github.com/AlexanderDaly/voyage-lab) and pushed the reviewed initial commit `fba7d0a` to `main`. The `origin` remote points to that repository. No existing repository was overwritten and no force push was used. [CI run 34649679132](https://github.com/AlexanderDaly/voyage-lab/actions/runs/34649679132) passed without project fixes.
 
 Publication contents: source, fixtures, regional public-domain land subset and provenance, test suites, lockfiles, documentation, screenshot, MIT license, and CI. Exclude local environments, exports, node_modules, generated builds, credentials, and browser traces.
 
 Publication audit: 56 intended tracked files, approximately 703 KB. Targeted private-key/token/personal-path patterns produced no matches; no excluded generated directories or files above 2 MB were tracked. This is a scoped scan plus file-list review, not a guarantee that arbitrary future changes contain no secrets.
 
-**Next concrete task:** obtain confirmation for public publication to `AlexanderDaly/voyage-lab`, create the repository without overwriting any existing remote, push the prepared commit, inspect CI, and fix project-caused failures. Then consider a bounded speed-sweep experiment.
+**Next concrete task:** design a bounded constant-speed sweep with explicit search limits and an exhaustive correctness check, then show the resulting fuel/time trade-off frontier. This is a proposed next milestone, not implemented functionality.

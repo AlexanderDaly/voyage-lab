@@ -60,7 +60,7 @@ uv run --frozen python -m benchmarks.run
 
 The browser suite starts the API when necessary. It tests comparison, alternate tracks, selection, JSON export/replay, invalid inputs, missing coverage, bad imports, and mobile overflow. External HTTP requests are blocked during the main workflow. On Linux, Playwright may require `playwright install --with-deps chromium` to install browser system libraries.
 
-The scientific suite checks the 240-nautical-mile hand calculation ($25,200), current projections, track holding, weather timing and directions, geometry, coverage, step convergence, and export integrity. See [verification evidence](docs/STATUS.md) and the [measured case study](docs/CASE_STUDY.md). Linux CI is configured; its result is unverified until the repository is published and Actions runs.
+The scientific suite checks the 240-nautical-mile hand calculation ($25,200), current projections, track holding, weather timing and directions, geometry, coverage, step convergence, and export integrity. See [verification evidence](docs/STATUS.md) and the [measured case study](docs/CASE_STUDY.md). Both local Windows verification and [Ubuntu CI](https://github.com/AlexanderDaly/voyage-lab/actions) pass.
 
 ## Architecture
 

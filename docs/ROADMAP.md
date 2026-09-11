@@ -12,7 +12,7 @@
 
 ## Next: make the experiment stronger
 
-1. Run and inspect CI on Linux after publication; resolve any portability differences.
+1. Verify replay of the same exported bundle across Windows and Linux; both platforms already pass their own test and replay suites.
 2. Add a speed sweep with explicit discrete search bounds and a fuel/time trade-off frontier. Compare it against exhaustive small cases before claiming optimization.
 3. Add a forecast adapter that preserves exact source responses, issue time, retrieval time, coverage, coordinate conventions, licenses, and hashes. Keep offline replay mandatory.
 4. Evaluate WRT using one reproduced example in a separate environment, with a documented mapping into Voyage Lab's scenario/result contract.
